@@ -2,13 +2,13 @@
 {
     public class Card
     {
-        public FaceValue _faceValue { get; }
-        public Suit _suit { get; }
+        public FaceValue FaceValue { get; }
+        public Suit Suit { get; }
 
         public Card(Suit suit, FaceValue faceValue)
         {
-            _faceValue = faceValue;
-            _suit = suit;
+            FaceValue = faceValue;
+            Suit = suit;
         }
     }
 }
