@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BlackJackGame.Models
 {
-    class Deck
+    public class Deck
     {
-        private readonly Random random;
+        private readonly Random random = new Random();
         private readonly IList<BlackJackCard> _cards;
         public Deck()
         {
@@ -34,6 +34,17 @@ namespace BlackJackGame.Models
         private void Shuffle()
         {
             List<BlackJackCard> hulp = new List<BlackJackCard>();
+            
+            foreach(BlackJackCard card in _cards)
+            {
+                hulp.Insert(random.Next(1,10), card);
+            }
+            int teller = 0;
+            foreach(BlackJackCard card in hulp)
+            {
+                _cards.Insert(teller, card);
+                teller++;
+            }
         }
     }
 }
