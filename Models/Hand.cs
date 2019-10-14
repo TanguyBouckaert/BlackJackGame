@@ -15,12 +15,19 @@ namespace BlackJackGame.Models
 
         public void AddCard(BlackJackCard blackJackCard)
         {
-
+            _cards.Add(blackJackCard);
         }
 
         public int CalculateValue()
         {
+            int totaal = 0;
 
+            foreach (BlackJackCard card in _cards)
+            {
+                totaal += card.Value;
+            }
+
+            return totaal;
         }
 
         public Hand()
@@ -30,7 +37,10 @@ namespace BlackJackGame.Models
 
         public void TurnAllCardsFaceUp()
         {
-
+            foreach(BlackJackCard card in _cards)
+            {
+                card.TurnCard();
+            }
         }
     }
 }
