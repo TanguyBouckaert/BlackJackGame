@@ -7,7 +7,7 @@ namespace BlackJackGame.Models
     public class Deck
     {
         private readonly Random random = new Random();
-        private readonly IList<BlackJackCard> _cards;
+        protected IList<BlackJackCard> _cards;
         public Deck()
         {
             _cards = new List<BlackJackCard>();
