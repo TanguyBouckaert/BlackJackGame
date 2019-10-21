@@ -4,7 +4,7 @@ namespace BlackJackGame.Models
 {
     public class BlackJackCard : Card
     {
-        public Boolean FaceUp { get; private set; }
+        public bool FaceUp { get; private set; }//Tanguy: Boolean
         public int Value
         {
             get
