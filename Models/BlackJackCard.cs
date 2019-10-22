@@ -9,8 +9,13 @@ namespace BlackJackGame.Models
         {
             get
             {
-                if (!FaceUp) return 0;
-                return Math.Min(10, (int)FaceValue);
+                return FaceUp ? Math.Min(10, (int)FaceValue) : 0;
+                /*
+                if (FaceUp)
+                    return Math.Min(10, (int)FaceValue);
+                else
+                    return 0;
+                    */
             }
         }
         public BlackJackCard(Suit suit, FaceValue faceValue) : base(suit, faceValue)

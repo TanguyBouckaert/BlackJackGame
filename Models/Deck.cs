@@ -47,6 +47,7 @@ namespace BlackJackGame.Models
 
         public BlackJackCard Draw()//Methode is juist maar anders dan oplossing
         {
+            /*
             if (0 != _cards.Count)
             {
                 BlackJackCard card = _cards[0];
@@ -57,7 +58,12 @@ namespace BlackJackGame.Models
             {
                 throw new InvalidOperationException("Er zijn geen kaarten meer.");
             }
-
+            */
+            if (_cards.Count == 0)
+                throw new InvalidOperationException("Cannot draw card from empty deck");
+            BlackJackCard card = _cards[0];
+            _cards.RemoveAt(0);
+            return card;
         }
 
     }

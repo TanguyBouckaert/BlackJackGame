@@ -13,7 +13,7 @@ namespace BlackJackGame
             {
                 BlackJack bj = new BlackJack();
                 DisplayHandsAndTotals(bj.DealerHand, bj.PlayerHand);
-                while (bj.GameState != gameState.GameOver)
+                while (bj.GameState != GameState.GameOver)
                 {
                     if (PlayerWantsCard())
                         bj.GivePlayerAnotherCard();
